@@ -1,0 +1,25 @@
+libreo de javascript
+
+https://eloquentjs-es.thedojo.mx/
+
+web de herramientas
+
+https://lenguajejs.com/javascript/
+----------------------------------------------------------------
+
+- Quiz App
+- Aplicación de notas
+- E-commerce (si realmente no tienen idea de qué hacer, recomiendo esta!)
+- Aplicación de pedidos de comida
+- Aplicación de películas
+- Aplicación de chat
+- Clon de Twitter
+- Aplicación de encuestas
+- Clon de Whatsapp
+- Clon de Netflix
+- Aplicación de búsqueda de trabajo
+- Clon de Pinterest
+- Aplicación de Stock
+- TO-DO list
+- Aplicación de reserva de hoteles
+- Conversor de divisas
