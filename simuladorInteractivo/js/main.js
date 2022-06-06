@@ -3,13 +3,13 @@ let servicioEmpresa = prompt("ARMA TU PRESUPUESTO \n-Elegi alguna de las siguien
 while(servicioEmpresa != "salir"){
     switch(servicioEmpresa){
         case "logotype":
-            alert ("El precio del logotype es: 5000");
+            alert ("El precio del logotype es: $5.000");
             break;
         case "website":
-            alert ("El precio del website es: 10000");
+            alert ("El precio del website es: $10.000");
             break;
         case "motion":
-            alert ("El precio del motion es: 7000");
+            alert ("El precio del motion es: $7.000");
             break;
         default:
             alert ("La opcion no es valida, vuelva a ingresar");
@@ -23,13 +23,13 @@ let tamanioEmpresa = prompt("ARMA TU PRESUPUESTO \n-Elegi alguna de las siguient
 while(tamanioEmpresa != "salir"){
     switch(tamanioEmpresa){
         case "small":
-            alert ("El precio para empresas chicas es: 500");
+            alert ("El precio para empresas chicas (1 a 10 empleados) es: $500");
             break;
         case "medium":
-            alert ("El precio para empresas media es: 1500");
+            alert ("El precio para empresas media (11 a 50 empleados) es: $1.500");
             break;
         case "big":
-            alert ("El precio para empresas grande es: 3000");
+            alert ("El precio para empresas grande (51 a + empleados) es: $3.000");
             break;
         default:
             alert ("La opcion no es valida, vuelva a ingresar");
@@ -39,8 +39,8 @@ while(tamanioEmpresa != "salir"){
 }
 
 
-let datoServicio = parseInt (prompt("cargar el costo del servicio"))
-let datoEmpresa = parseInt (prompt("cargar el costo x tamanio de empresa"))
+let datoServicio = parseInt (prompt("Por Favor, cargar el costo del servicio elegido:"))
+let datoEmpresa = parseInt (prompt("Por Favor cargar el costo por el tamanio de empresa elegido:"))
 
 
 function sumarServis(dato1,dato2){
@@ -48,7 +48,7 @@ function sumarServis(dato1,dato2){
 }
  
 function mostrar(mensaje){
-    alert("El Servicio tiene un costo de: "+ mensaje);
+    alert("El Servicio tiene un costo de: $"+ mensaje);
 }
 
 let resultado = sumarServis(datoServicio,datoEmpresa); 
