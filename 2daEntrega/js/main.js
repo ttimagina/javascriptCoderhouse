@@ -67,7 +67,7 @@ console.log(muestrario3);
 console.log(muestrario4);
 console.log(muestrario5);
 
-let aviso = alert("Por favor chequea en la consola servicio, precios y luego arma tu presupuesto")
+let aviso = alert("Por favor chequea en la consola los servicio, precios y luego arma tu presupuesto")
 
 let datoServicio = parseInt (prompt("Por Favor, cargar el costo del servicio elegido:"))
 let extraServicio = parseInt (prompt("Por Favor, si estas interesado en agregar otro items carga el costo:"))
