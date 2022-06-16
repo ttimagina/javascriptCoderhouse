@@ -91,7 +91,7 @@ function sumarServis(dato1, dato2){
     return dato1 + dato2;
 }
 
-sumarServis(tamanioEmpresa + servicioEmpresa) 
+sumarServis(tamanioEmpresa, servicioEmpresa) 
     
 function mostrar(mensaje){
     alert("El Servicio tiene un costo de: "+ mensaje);
