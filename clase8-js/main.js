@@ -60,7 +60,7 @@ console.log(concatenado);
 //plantillas literales
 let plantillas=`<h3> ID Producto:</h3> ${producto.id}
 <p>Nombre: ${producto.nombre}</p>
-<p>Precio: ${producto.Precio}</p>`;
+<p>Precio: ${producto.precio}</p>`;
 
 console.log(plantillas)
 

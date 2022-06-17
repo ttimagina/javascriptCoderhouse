@@ -3,11 +3,11 @@ document.title = "clase 9 / comision 30400";
 
 const contador = document.querySelector('#contador'),
 btnMas = document.querySelector('#aumentar'),
-btnMenos = document.querySelector('#restar');
-ingreso = document.querySelector('#ingreso');
-btnGuardar = document.querySelector('#btnGuardar')
-mensaje = document.querySelector('#mensaje')
-enviar = document.querySelector('#enviar')
+btnMenos = document.querySelector('#restar'),
+ingreso = document.querySelector('#ingreso'),
+btnGuardar = document.querySelector('#btnGuardar'),
+mensaje = document.querySelector('#mensaje'),
+enviar = document.querySelector('#enviar'),
 
 //query...
 
