@@ -1,4 +1,4 @@
-document.title = "Proyecto Final 1er entrega";
+document.title = "DESAFÍO COMPLEMENTARIO - Dom";
 const listDisenioMostrar = document.getElementById('listDisenio')
 
 let nombreusuario = prompt('Escribi tu Nombre');
