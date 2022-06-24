@@ -7,7 +7,7 @@ btnMenos = document.querySelector('#restar'),
 ingreso = document.querySelector('#ingreso'),
 btnGuardar = document.querySelector('#btnGuardar'),
 mensaje = document.querySelector('#mensaje'),
-enviar = document.querySelector('#enviar'),
+enviar = document.querySelector('#enviar');
 
 //query...
 
@@ -32,7 +32,7 @@ btnMenos.onclick = () => {
 };
 
 btnGuardar.addEventListener( "click", () => {
-    mensaje.innerHTML = ingreso.value;
+        mensaje.innerHTML = ingreso.value;
 });
 
 
