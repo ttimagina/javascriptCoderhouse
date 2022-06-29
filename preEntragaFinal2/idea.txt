@@ -1,0 +1,3 @@
+pushear desde un parseint valores para armar una nueva array y ahi aplicar un reduce apra sumar el total
+
+se podria agregar desde un console.log( math.round()) - redondear resultado
