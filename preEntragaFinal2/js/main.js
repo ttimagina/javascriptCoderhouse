@@ -6,6 +6,7 @@ const listDisenioMostrar = document.getElementById('listadoDeServicios');
 const mostrarServiciosAgregados = document.getElementById('servicioContenedor');
 
 let nombreusuario = prompt('Escribi tu Nombre');
+localStorage.setItem('nombres del usuario', nombreusuario);
 
 const saludos = document.getElementById('nombreusuario');
 saludos.innerHTML = "Hola "+ nombreusuario;
