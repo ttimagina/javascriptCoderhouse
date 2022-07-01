@@ -13,30 +13,33 @@ let listadoDeServicios = [
     {id: 12, tipo:'tamanioEmpresa', nombre: 'Mediana', precio: 5000, cat:'tipodeCliente', img: './img/cliente_1_presu.jpg',  detalle: 'El costo por empresas de 11 a 50 empleados / o profesionales. Se le suma el costo de este monto a los servicios seleccionado' },
     {id: 13, tipo:'tamanioEmpresa', nombre: 'grande', precio: 10000, cat:'tipodeCliente', img: './img/cliente_1_presu.jpg', detalle: 'El costo por empresas de 50 a + empleados / o profesionales. Se le suma el costo de este monto a los servicios seleccionado'},
 ]
+const listDisenioMostrar = document.getElementById('listadoDeServicios');
 
+ function mostrarServicios(){
+    listadoDeServicios.forEach(el => {
 
-/* function mostrarServicios()
- listadoDeServicios.forEach(el => {
+        let div = document.createElement('div')
+        div.className = 'col-md-3 d-flex flex-column my-3 mx-3'
+        div.innerHTML = `<div>
+        <img src="${el.img}" class="card-img-top img-fluid img_borde_redondo1" alt="imagen">
+        <div class="card-text mb-auto">    
+        <h4 class="titulos_notas--black">${el.nombre}</h4>
+        <p class="card-text txt_justificado">${el.detalle}</p>
+        </div>
+        <div class="bg-branding p-1 font_oswald">
+            <h6>Precio: $ ${el.precio}</h6>
+            <button type="button" id="boton${el.id}" class="btn btn-success">AGREGAR</button>
+        </div> 
+        </div> `
 
-    let div = document.createElement('div')
-    div.className = 'col-md-3 d-flex flex-column my-3 mx-3'
-    div.innerHTML = `<div>
-    <img src="${el.img}" class="card-img-top img-fluid img_borde_redondo1" alt="imagen">
-    <div class="card-text mb-auto">    
-      <h4 class="titulos_notas--black">${el.nombre}</h4>
-      <p class="card-text txt_justificado">${el.detalle}</p>
-    </div>
-    <div class="bg-branding p-1 font_oswald">
-        <h6>Precio: $ ${el.precio}</h6>
-        <button type="button" id="boton${el.id}" class="btn btn-success">AGREGAR</button>
-    </div> 
-    </div> `
+        listDisenioMostrar.appendChild(div)
 
-    listDisenioMostrar.appendChild(div)
+        let btnAgregar = document.getElementById(`boton${el.id}`)
+            
+        btnAgregar.addEventListener('click',()=>{
+                agregarPresupuesto(el.id);
+        })
+    }) 
+ }
 
-    let btnAgregar = document.getElementById(`boton${el.id}`)
-        
-    btnAgregar.addEventListener('click',()=>{
-            agregarPresupuesto(el.id);
-    })
-}) */
+ mostrarServicios()

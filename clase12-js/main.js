@@ -79,4 +79,37 @@ let nombrenuevo = nombress[0]
 
 console.log(nombrenuevo)
 
+//spread operator
 
+const nums = [321, 32, 545, 22, 5, 8, 9 ];
+console.log(...nombress);
+console.log(Math.max(...nums));
+
+const otroejemplo =['pablo', 'perdo', 'umma', 'kito'];
+
+const otroejemplosunidos = [...nombress, ...otroejemplo];
+console.log(otroejemplosunidos);
+
+const otroejemplounidosObjeto ={...otroejemplosunidos};
+console.log(otroejemplounidosObjeto);
+
+
+let userCopia = {
+    ...user,
+    telefono: 37894886995 //se puede agregar elementos alementos y cambiarlos del original en un nuevo objeto
+};
+
+console.log(userCopia);
+
+
+function sumarTotales(...precios){
+    return precios.reduce((acc, n) => acc + n, 0);
+}
+
+let total1 = sumarTotales(4);
+let total2 = sumarTotales(4,5,6,7,8,9,25);
+
+console.log(total1)
+console.log(total2)
+
+console.log(sumarTotales(4,5,6,7,8,9,25));
