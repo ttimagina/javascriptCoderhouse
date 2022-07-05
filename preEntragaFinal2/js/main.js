@@ -47,7 +47,7 @@ const contadorCarrito = document.getElementById('contadorCarrito');
 const precioTotal = document.getElementById('precioTotal');
 
 const selecTalles = document.getElementById('selecTalles')
-const buscador = document.getElementById('search')
+
 
 //filtro
 selecTalles.addEventListener('change',()=>{
@@ -56,7 +56,7 @@ selecTalles.addEventListener('change',()=>{
     if(selecTalles.value == 'all'){
         mostrarProductos(stockProductos)
     }else{
-        let arrayNuevo = stockProductos.filter(item => item.talle == selecTalles.value)//array nuevo
+        let arrayNuevo = stockProductos.filter(item => item.tipo == selecTalles.value)//array nuevo
 
         mostrarProductos(arrayNuevo)
     }
