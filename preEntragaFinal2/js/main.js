@@ -122,8 +122,8 @@ function mostrarCarrito(productoAgregar) {
     div.classList.add('productoEnCarrito')
     div.innerHTML =`<p>${productoAgregar.nombre}</p>
                 <p>Precio: $${productoAgregar.precio}</p>
-                <p id="cantidad${productoAgregar.id}">cantidad: ${productoAgregar.cantidad}</p>
-                <button id="eliminar${productoAgregar.id}" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>`
+                
+                <button id="eliminar${productoAgregar.id}" class="boton-eliminar"><i class="fas fa-trash-alt"></i>X</button>`
     contenedorCarrito.appendChild(div)
 
     let btnEliminar= document.getElementById(`eliminar${productoAgregar.id}`)
