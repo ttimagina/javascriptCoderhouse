@@ -65,7 +65,7 @@
         <p>Por favor chequea en los servicio, sus detalles y luego arma tu presupuesto</p>
       </section>
       <div class="seleccion col-md-12 d-flex flex-column align-items-center">
-        <select id="sleccionarservicio">
+        <select id="selecTalles">
           <option value="all">todos</option>
           <option value="branding">branding</option>
           <option value="website">website</option>
@@ -73,16 +73,30 @@
           <option value="tamanioEmpresa">tamaño-Empresa</option>
         </select>
       </div>
-      <dialog>
-        <div id="servicioContenedor">
 
+    <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
+
+      <!--Inicio Modal-->
+      <div class="modal-contenedor">
+        <div class="modal-carrito">
+            <h3>Carrito</h3>
+            <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+            <div id="carrito-contenedor">
+                 <!-- <div class="productoEnCarrito">
+                    <p>Buzo 1</p>
+                    <p>Precio: $1200</p>
+                    <button class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+                </div>  -->
+            </div>
+            <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+            <div id="terminar" style="display: flex; justify-content: flex-end;"></div>
         </div>
-        <button id="cancel">Salir</button>
-      </dialog>
+    </div>
+    <!--Cierre Modal-->
     
-    <button id="show">Abrir carrito</button>
+    
       <!-- inicio catalogo de producto-->
-        <div id="listadoDeServicios" class="row mx-auto my-3 d-flex flex-row justify-content-center">
+        <div id="contenedor-productos" class="row mx-auto my-3 d-flex flex-row justify-content-center">
 
         </div>
       </div>
@@ -146,6 +160,7 @@
         </footer>
         <!--CIERRE DE FOOTER-->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.19/dist/sweetalert2.all.min.js" integrity="sha256-NRwwtY2+HbkYyns4qhoHF9I40fpkeEM1DcsyzGi3lTs=" crossorigin="anonymous"></script>
+        <script src="./js/stock.js"></script>
         <script src="./js/modal.js"></script>
         <script src="./js/main.js"></script>
         <script src="./js/bootstrap.js"></script> 

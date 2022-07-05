@@ -1,4 +1,4 @@
-let carritoServicios=[]
+let carritoDeCompras = []
 
 document.title = "2da PreEntrega - Proyecto Final ";
 /// input types of sweetalert2
@@ -37,35 +37,41 @@ document.title = "2da PreEntrega - Proyecto Final ";
 
 ////
 
-const listDisenioMostrar = document.getElementById('listadoDeServicios');
-const mostrarServiciosAgregados = document.getElementById('servicioContenedor');
+const contenedorProductos = document.getElementById('contenedor-productos');
+const contenedorCarrito = document.getElementById('carrito-contenedor');
 
+const botonTerminar = document.getElementById('terminar')
+const finCompra = document.getElementById('fin-compra')
 
-///listado de servicios
-let listadoDeServicios = [
-    {id: 1, tipo:'website', nombre: 'Basic WebSite', precio: 50000, cat:'tipoDisenio', img: './img/web_1_presu.jpg', detalle: 'El servicio de website basico, incluye un sitio estatico, de hasta 5 pagina. '},
-    {id: 2, tipo:'branding', nombre: 'Basic Logotype', precio: 10000, cat:'tipoDisenio', img: './img/branding_1_presu.jpg', detalle: 'El servicio de Branding basico, incluye el desarrollo de una marca (Hasta 3 correciones). ' },
-    {id: 3, tipo:'motion',nombre: 'Basic motion', precio: 20000, cat:'tipoDisenio', img: './img/motion_1_presu.jpg', detalle: 'El servicio de Motion basico, incluye el desarrollo de 1minuto de animacion. '},
-    {id: 5, tipo:'website', nombre: 'website High', precio: 20000, cat:'agregadoDisenioWeb', img: './img/web_1_presu.jpg', detalle: 'El servicio de website High, incluye un sitio dinamico, de hasta 20 pagina. Se le suma el costo del servicio basico web' },
-    {id: 6, tipo:'website', nombre: 'website Premium', precio: 40000, cat:'agregadoDisenioWeb', img: './img/web_1_presu.jpg', detalle: 'El servicio de website Premium, incluye un sitio dinamico, de hasta 20 pagina. Se le suma el costo del servicio basico web'},
-    {id: 7, tipo:'branding', nombre: 'Branding Medium', precio: 10000, cat:'agregadoDisenioLogo', img: './img/branding_1_presu.jpg', detalle: 'El servicio de Branding Medium, incluye desarrollo de marca, mas manual de uso. Se le suma el costo del servicio basico branding'},
-    {id: 8, tipo:'branding', nombre: 'Branding High', precio: 20000, cat:'agregadoDisenioLogo', img: './img/branding_1_presu.jpg', detalle: 'El servicio de Branding High, incluye desarrollo de marca, mas manual de uso y ejemplos de lenguajes de marca. Se le suma el costo del servicio basico branding'},
-    {id: 9, tipo:'motion', nombre: 'Motion Medium', precio: 15000, cat:'agregadoDisenioMotio', img: './img/motion_1_presu.jpg', detalle: 'El servicio de Motion Medium, incluye desarrollo de hasta 3 minutos de animacion. Se le suma el costo del servicio basico motion'},
-    {id: 10, tipo:'motion', nombre: 'Motion High', precio: 30000, cat:'agregadoDisenioMotio', img: './img/motion_1_presu.jpg', detalle: 'El servicio de Motion High, incluye desarrollo de hasta 3 minutos de animacion. Se le suma el costo del servicio basico motion'},
-    {id: 11, tipo:'tamanioEmpresa', nombre: 'pequenia', precio: 0, cat:'tipodeCliente', img: './img/cliente_1_presu.jpg', detalle: 'El costo por empresas de 1 a 10 empleados / o profesionales. Se le suma el costo de este monto a los servicios seleccionado'},
-    {id: 12, tipo:'tamanioEmpresa', nombre: 'Mediana', precio: 5000, cat:'tipodeCliente', img: './img/cliente_1_presu.jpg',  detalle: 'El costo por empresas de 11 a 50 empleados / o profesionales. Se le suma el costo de este monto a los servicios seleccionado' },
-    {id: 13, tipo:'tamanioEmpresa', nombre: 'grande', precio: 10000, cat:'tipodeCliente', img: './img/cliente_1_presu.jpg', detalle: 'El costo por empresas de 50 a + empleados / o profesionales. Se le suma el costo de este monto a los servicios seleccionado'},
-]
-////
+const contadorCarrito = document.getElementById('contadorCarrito');
+const precioTotal = document.getElementById('precioTotal');
 
-mostrarServicios(listadoDeServicios)
+const selecTalles = document.getElementById('selecTalles')
+const buscador = document.getElementById('search')
 
-function mostrarServicios(array){
+//filtro
+selecTalles.addEventListener('change',()=>{
 
-    for (const el of array) {
+    console.log(selecTalles.value)
+    if(selecTalles.value == 'all'){
+        mostrarProductos(stockProductos)
+    }else{
+        let arrayNuevo = stockProductos.filter(item => item.talle == selecTalles.value)//array nuevo
 
-        listDisenioMostrar.innerHTML = ""
-        
+        mostrarProductos(arrayNuevo)
+    }
+})
+
+//Buscado
+mostrarProductos(stockProductos)
+
+//logica Ecommerce
+function mostrarProductos(array){
+
+    contenedorProductos.innerHTML = ""
+
+    for(const el of array) {
+
         let div = document.createElement('div')
         div.className = 'col-md-3 d-flex flex-column my-3 mx-3'
         div.innerHTML = `<div>
@@ -80,66 +86,66 @@ function mostrarServicios(array){
         </div> 
         </div> `
 
-        listDisenioMostrar.appendChild(div)
-
+        contenedorProductos.appendChild(div)
+        
         let btnAgregar = document.getElementById(`boton${el.id}`)
         
         btnAgregar.addEventListener('click',()=>{
-            agregarPresupuesto(el.id);
+            agregarAlCarrito(el.id);
         })
-    }
-}
 
- function agregarPresupuesto(id) {
-    let servicioExiste = carritoServicios.find(ele => ele.id === id)
-    ///console.log(servicioAgregar);
-    if(servicioExiste){
-        servicioExiste.cantidad = servicioExiste.cantidad + 1
-        document.getElementById(`Cantidad${servicioExiste.id}`).innerHTML = `<p id="cantidad${servicioExiste.id}">cantidad: ${servicioExiste.cantidad}</p>`
+    }
+       
+}
+function agregarAlCarrito(id) {
+    let yaExiste = carritoDeCompras.find(elemento => elemento.id == id)
+
+    if(yaExiste){
+        yaExiste.cantidad = yaExiste.cantidad + 1
+        document.getElementById(`cantidad${yaExiste.id}`).innerHTML = `<p id="cantidad${yaExiste.id}">cantidad: ${yaExiste.cantidad}</p>`
         actualizarCarrito()
     }else{
-        let servicioAgregar = listadoDeServicios.find(ele => ele.id === id)
-        servicioAgregar.cantidad = 1
-
-        carritoServicios.push(servicioAgregar)
-        actualizarCarrito()
-        mostrarServicios(servicioAgregar)
+        let productoAgregar = stockProductos.find(ele => ele.id === id)
+        productoAgregar.cantidad = 1 
+   carritoDeCompras.push(productoAgregar)
+   actualizarCarrito()
+   mostrarCarrito(productoAgregar) 
     }
+  
+}
 
- 
-} 
 
 
-function mostrarServicios(servicioAgregar){
+function mostrarCarrito(productoAgregar) {
 
     let div = document.createElement('div')
-    div.innerHTML = `<div class="card-text mb-auto">    
-            <h4 class="titulos_notas--black">${servicioAgregar.nombre}</h4>
-        </div>
-        <div class="bg-branding p-1 font_oswald">
-            <h6>Precio: $ ${servicioAgregar.precio}</h6>
-        </div> 
-        <p id="cantidad${servicioAgregar.id}">cantidad: ${servicioAgregar.cantidad}</p>
-        <button id="eliminar${servicioAgregar.id}" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>`
+    div.classList.add('productoEnCarrito')
+    div.innerHTML =`<p>${productoAgregar.nombre}</p>
+                <p>Precio: $${productoAgregar.precio}</p>
+                <p id="cantidad${productoAgregar.id}">cantidad: ${productoAgregar.cantidad}</p>
+                <button id="eliminar${productoAgregar.id}" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>`
+    contenedorCarrito.appendChild(div)
 
-    mostrarServiciosAgregados.appendChild(div)
-
-    let btnEliminar= document.getElementById(`eliminar${servicioAgregar.id}`)
-    btnEliminar.addEventListener('click', ()=>{
-        if(servicioAgregar.cantidad ==1){
+    let btnEliminar= document.getElementById(`eliminar${productoAgregar.id}`)
+    btnEliminar.addEventListener('click',()=>{
+        if(productoAgregar.cantidad == 1){
             btnEliminar.parentElement.remove()
-            carritoServicios = carritoServicios.filter(item => item.id !== servicioAgregar.id)
+            carritoDeCompras = carritoDeCompras.filter(item => item.id !== productoAgregar.id)
             actualizarCarrito()
         }else{
-            servicioAgregar.cantidad = servicioAgregar.cantidad -1 
-        document.getElementById(`cantidad${servicioAgregar.id}`).innerHTML = `<p id="cantidad${servicioAgregar.id}">cantidad: ${servicioAgregar.cantidad}</p>`
+            productoAgregar.cantidad = productoAgregar.cantidad - 1
+        document.getElementById(`cantidad${productoAgregar.id}`).innerHTML = `<p id="cantidad${productoAgregar.id}">cantidad: ${productoAgregar.cantidad}</p>`
         actualizarCarrito()
         }
     
+
     })
 }
 
+
+
+
 function  actualizarCarrito (){
-    contadorServicio.innerText = carritoServicios.reduce((acc,el)=> acc + el.cantidad, 0)
-    precioTotal.innerText = carritoServicios.reduce((acc,el)=> acc + (el.precio * el.cantidad) , 0)                                                            
- }
+   contadorCarrito.innerText = carritoDeCompras.reduce((acc,el)=> acc + el.cantidad, 0)
+   precioTotal.innerText = carritoDeCompras.reduce((acc,el)=> acc + (el.precio * el.cantidad) , 0)                                                            
+}

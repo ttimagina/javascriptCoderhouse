@@ -1,6 +1,18 @@
-const dialog = document.querySelector('dialog')
-const cancel = document.querySelector('#cancel')
-const show = document.querySelector('#show')
+const carritoAbrir = document.getElementById('boton-carrito');
+const carritoCerrar = document.getElementById('carritoCerrar');
 
-show.addEventListener('click', () => dialog.showModal())
-cancel.addEventListener('click',() => dialog.close())
+const contenedorModal = document.getElementsByClassName('modal-contenedor')[0]
+const modalCarrito = document.getElementsByClassName('modal-carrito')[0]
+
+carritoAbrir.addEventListener('click', ()=> {
+    contenedorModal.classList.toggle('modal-active')
+})
+carritoCerrar.addEventListener('click', ()=> {
+    contenedorModal.classList.toggle('modal-active')
+})
+modalCarrito.addEventListener('click',(e)=>{
+    e.stopPropagation()
+})
+contenedorModal.addEventListener('click', ()=>{
+    carritoCerrar.click()
+})

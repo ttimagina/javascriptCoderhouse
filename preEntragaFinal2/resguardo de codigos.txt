@@ -31,3 +31,11 @@ function mostrar(mensaje){
 let resultado = sumarServis(datoServicio,extraServicio,datoEmpresa); 
 
 mostrar(resultado) */
+
+
+
+/* let nombreusuario = prompt('Escribi tu Nombre');
+localStorage.setItem('nombres del usuario', nombreusuario);
+
+const saludos = document.getElementById('nombreusuario');
+saludos.innerHTML = "Hola "+ nombreusuario; */
