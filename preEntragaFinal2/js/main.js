@@ -24,15 +24,19 @@ document.title = "2da PreEntrega - Proyecto Final ";
       }
     })
     
-    if (ipName) {
+/*     if (ipName) {
       Swal.fire(`Bienvenido ${ipName}`)
       localStorage.setItem('nombres del usuario', ipName);
 
       const saludos = document.getElementById('nombreusuario');
       saludos.innerHTML = "Hola "+ ipName;
       
-    }
-    
+    } */
+    //// operardor AND
+    ipName && Swal.fire(`Bienvenido ${ipName}`),
+     localStorage.setItem('nombres del usuario', ipName); 
+     const saludos = document.getElementById('nombreusuario');
+     saludos.innerHTML = "Hola "+ ipName;
     })()
 
 ////
@@ -59,7 +63,9 @@ selecTalles.addEventListener('change',()=>{
         let arrayNuevo = stockProductos.filter(item => item.tipo == selecTalles.value)//array nuevo
 
         mostrarProductos(arrayNuevo)
-    }
+    } 
+
+
 })
 
 //Buscado
