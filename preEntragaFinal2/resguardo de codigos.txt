@@ -39,3 +39,26 @@ localStorage.setItem('nombres del usuario', nombreusuario);
 
 const saludos = document.getElementById('nombreusuario');
 saludos.innerHTML = "Hola "+ nombreusuario; */
+
+
+
+-------- resumens coderacademy
+
+The . is another operator!
+
+
+-- metodos 
+
+el operador . elmetodo()
+
+
+.toUpperCase()
+.trim() // remover espacios adelantes y atras del string
+.random() 
+.floor() toma un número decimal y lo redondea al número entero más cercano. 
+
+
+--objeto
+math
+
+

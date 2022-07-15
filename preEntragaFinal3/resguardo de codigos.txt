@@ -1,0 +1,64 @@
+/* for (const producto of listDisenio) {
+    let contenedor = document.createElement('listDisenio');
+    //Definimos el innerHTML del elemento con una plantilla de texto
+    contenedor.innerHTML = `<div> 
+    <p> Producto: ${producto.nombre}</p>
+    <b> Valor: ${producto.precio}</b>
+    </div>`;
+    document.body.appendChild(contenedor);
+} */
+
+/*  
+console.log("Servicios Basicos:");
+console.log(muestrario1);
+
+
+let aviso = alert("Por favor chequea en la consola los servicio, precios y luego arma tu presupuesto")
+
+let datoServicio = parseInt (prompt("Por Favor, cargar el costo del servicio basico elegido:"))
+let extraServicio = parseInt (prompt("Por Favor, si estas interesado en agregar otro items carga el costo a continuacion:"))
+let datoEmpresa = parseInt (prompt("Por Favor cargar el costo por el tamanio de empresa elegido:"))
+
+
+function sumarServis(dato1,dato2,dato3){
+    return dato1 + dato2 + dato3;
+}
+ 
+function mostrar(mensaje){
+    alert("El Servicio tiene un costo de: $"+ mensaje);
+}
+
+let resultado = sumarServis(datoServicio,extraServicio,datoEmpresa); 
+
+mostrar(resultado) */
+
+
+
+/* let nombreusuario = prompt('Escribi tu Nombre');
+localStorage.setItem('nombres del usuario', nombreusuario);
+
+const saludos = document.getElementById('nombreusuario');
+saludos.innerHTML = "Hola "+ nombreusuario; */
+
+
+
+-------- resumens coderacademy
+
+The . is another operator!
+
+
+-- metodos 
+
+el operador . elmetodo()
+
+
+.toUpperCase()
+.trim() // remover espacios adelantes y atras del string
+.random() 
+.floor() toma un número decimal y lo redondea al número entero más cercano. 
+
+
+--objeto
+math
+
+

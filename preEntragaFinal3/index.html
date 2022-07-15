@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
+</head>
+<body>
+    <!--INICIO DE MENU-->
+    <div class="container">
+        <div class="col d-flex justify-content-center my-2">   
+          <picture>
+            <source media="(max-width: 975px)" srcset="img/small_logo1.svg">
+            <source media="(min-width: 976px)" srcset="img/logo1.svg">
+            <img src="img/logo1.svg" alt="logo ttimagina" class="img_logo_head">
+          </picture>
+        </div>
+        <!-- agregando el clima-->
+        <div class="d-flex">
+          <div id="caja1">
+            <h1 id="temperatura-valor"></h1>
+            <h1 id="temperatura-descripcion"></h1>
+            <h2 id="ubicacion"></h2>
+        </div>
+
+        </div>
+    </div>
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-negro ">
+        <div class="container-fluid">
+            <button class="mx-auto navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=" navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#">INICIO</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  href="#">BRANDING</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">ANIMATION</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">WEBISTE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">CONTACTO</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">PRESUPUESTO</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--CIERRE DE MENU-->
+              <!-- comienzo de slider-->
+        <div class="container-fluid backgrounBrouwn linear-gradient_motion_contacto">
+            <div class="d-flex justify-content-center col-md-10 mx-auto">
+                <div class="texto_iniciodeseccion">PRESUPUESTO</div>
+            </div>
+        </div>
+          <!-- fin de slider-->
+    <main class="container-fluid">
+      <section class="col-md-12 d-flex flex-column align-items-center">
+        <div class="titulos_notas--black">Servicio de Diseño</div>
+        <h5 id="nombreusuario" class="font_oswald"></h5>
+        <p>Por favor chequea en los servicio, sus detalles y luego arma tu presupuesto</p>
+      </section>
+      <div class="seleccion col-md-12 d-flex flex-column align-items-center">
+        <select id="selecTalles">
+          <option value="all">todos</option>
+          <option value="branding">branding</option>
+          <option value="website">website</option>
+          <option value="motion">motion</option>
+          <option value="tamanioEmpresa">tamaño-Empresa</option>
+        </select>
+
+        <p>Servicios Selecionados</p><button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">abri carrito</span></button>
+      </div>
+<hr>
+
+   
+      <!-- inicio catalogo de producto-->
+        <div id="contenedor-productos" class="row mx-auto my-3 d-flex flex-row justify-content-center">
+
+        </div>
+      </div>
+    </main>
+
+      <!--Inicio Modal-->
+      <div class="modal-contenedor">
+        <div class="modal-carrito">
+            <h3>Carrito</h3>
+            <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+            <div id="carrito-contenedor">
+                 <!-- <div class="productoEnCarrito">
+                    <p>Buzo 1</p>
+                    <p>Precio: $1200</p>
+                    <button class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+                </div>  -->
+            </div>
+            <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+            <div id="terminar" style="display: flex; justify-content: flex-end;"></div>
+        </div>
+    </div>
+    <!--Cierre Modal-->
+
+        <!--INCIO DE FOOTER--> 
+        <footer>
+            <div class="container-fluid linear-gradient1">
+                <div class="row py-2  text-center">
+                    <div class="col-md-3 d-flex justify-content-center align-items-center mb-3"> <!--py-5 text-center-->
+                       
+                        <a href="index.html">                      
+                          <picture>
+                            <source media="(max-width: 975px)" srcset="img/small_logo1.svg">
+                            <source media="(min-width: 976px)" srcset="img/logo1.svg">
+                            <img src="img/logo1.svg" alt="logo ttimagina" class="img_logo_head">
+                          </picture>
+                        </a>
+                        
+                    </div>
+                    <div class="col-md-3 d-flex justify-content-center align-items-center mb-3"> <!--px-5 mb-3-->
+                        <section>    
+                          <h5 class="font_oswald">SECCIONES</h5>
+                            <ul class="nav flex-column">
+                              <li class="nav-item mb-2"><a href="branding.html" class="nav-link p-0 ">Branding</a></li>
+                              <li class="nav-item mb-2"><a href="animation.html" class="nav-link p-0 ">Animation</a></li>
+                              <li class="nav-item mb-2"><a href="website.html" class="nav-link p-0 ">Website</a></li>
+                              <li class="nav-item mb-2"><a href="contacto.html" class="nav-link p-0 ">Contacto</a></li>
+                            </ul>
+                        </section>    
+                    </div>
+                    <div class="col-md-3 d-flex justify-content-center align-items-center mb-3">
+                      <section>
+                          <h5 class="font_oswald">CONTACTO</h5>
+                          <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><h6 class="font_oswald">DIRECCION</h6>
+                              Luis Braille 3935</li>
+                            <li class="nav-item mb-2"><h6 class="font_oswald">CELULAR</h6>
+                              3794886995</li>
+                            <li class="nav-item mb-2"><h6 class="font_oswald">EMAIL</h6>
+                              martinfrette@gmail.com</li>
+                          </ul>
+                      </section>    
+                    </div>
+                    <div class="col-md-3 d-flex justify-content-center align-items-center mb-3">
+                      <section>
+                       <h5 class="font_oswald">SOCIAL MEDIA</h5>
+                            <ul class="nav flex-column">   
+                                <!-- <a href="https://www.instagram.com/ttimagina/" target="_blank" class="nav-link p-0 "><li><img class="footer_img" src="img/instagram (1).png" alt="instagram"> INSTAGRAM</li></a>
+                                <a href="https://www.facebook.com/martinfacundo/" target="_blank" class="nav-link p-0 "><li><img class="footer_img" src="img/facebook (1).png" alt="facebook"> FACEBOOK</li></a>-->
+                                <a href="https://www.linkedin.com/in/martinfrette/" target="_blank" class="nav-link p-0 "><li><img class="footer_img" src="img/linkedin.png" alt="linkedin"> LINKEDIN</li></a>
+                            </ul>
+                      </section>      
+                    </div>
+                  </div> 
+            </div>
+            <div class="container-fluid bg-dark">
+                <div class="col d-flex justify-content-center color_white">
+                <p> © 2022 ttimagina, Inc. All rights reserved.</p> 
+                </div>
+            </div>
+        </footer>
+        <!--CIERRE DE FOOTER-->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.19/dist/sweetalert2.all.min.js" integrity="sha256-NRwwtY2+HbkYyns4qhoHF9I40fpkeEM1DcsyzGi3lTs=" crossorigin="anonymous"></script>
+        <script src="./js/stock.js"></script>
+        <script src="./js/modal.js"></script>
+        <script src="./js/main.js"></script>
+        <script src="./js/bootstrap.js"></script> 
+        <script src="./js/clima.js"></script>
+</body>
+</html>
