@@ -5,12 +5,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
+/* estilos para el bloque del clima*/
+
+.stilo_row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; 
+}
+
+.stilo_row div{
+  padding: 0.2vw 0.2vw 0.2vw 0.2vw;
+}
+
 
 /*estilos para el modal*/
 select {
   display: inline;
   text-align: center;
-  border: 1px solid lightskyblue;
+  border: 1px solid #584040;;
 }
 .modal-contenedor {
   position: fixed;
@@ -35,7 +48,7 @@ select {
 .modal-carrito {
   position: relative;
   background-color: white;
-  border: 1px solid rgb(225, 76, 65);
+  border: 1px solid #273227;
   min-width: 500px;
   padding: 20px;
   margin-top: -100%;
@@ -47,7 +60,7 @@ select {
 }
 
 .modal-carrito h3 {
-  color: rgb(225, 76, 65);
+  color: #273227;
   padding-bottom: 5px;
 }
 .modal-carrito #carritoCerrar {
@@ -55,7 +68,7 @@ select {
   top: 15px;
   right: 15px;
   font-size: 20px;
-  color: rgb(225, 76, 65);
+  color: #273227;
   border: none;
   background-color: white;
 }
@@ -69,7 +82,7 @@ select {
   padding-top: 10px;
 }
 .card .card-image .card-title {
-  color: rgb(225, 76, 65);
+  color: #273227;
   position: unset;
 }
 
@@ -83,12 +96,12 @@ select {
   justify-content: space-between;
 }
 .productoEnCarrito:hover {
-  border-left: 5px solid rgb(225, 76, 65);
+  border-left: 5px solid #273227;
 }
 
 .boton-eliminar {
   background-color: white;
-  color: red;
+  color: #273227;
   border: none;
   font-size: 20px;
 }
@@ -105,7 +118,7 @@ select {
   width: 43%;
 }
 
-/*termina los estilos para el modal*/
+/*aca terminan los estilos para el modal*/
 
 
 main a {

@@ -10,6 +10,15 @@
     <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
 </head>
 <body>
+          <!-- agregando el clima-->
+        <div class="container-fluid bg-contacto stilo_row">
+          
+            <div class="flex-md-row font_oswald color_white" id="temperatura-valor"></div>
+            <div class="flex-md-row font_oswald color_white" id="temperatura-descripcion"></div>
+            <div class="flex-md-row font_oswald color_white" id="ubicacion"></div>
+        
+
+        </div>
     <!--INICIO DE MENU-->
     <div class="container">
         <div class="col d-flex justify-content-center my-2">   
@@ -18,15 +27,6 @@
             <source media="(min-width: 976px)" srcset="img/logo1.svg">
             <img src="img/logo1.svg" alt="logo ttimagina" class="img_logo_head">
           </picture>
-        </div>
-        <!-- agregando el clima-->
-        <div class="container ">
-          <div id=" row caja1">
-            <div class="" id="temperatura-valor"></div>
-            <div id="temperatura-descripcion"></div>
-            <div id="ubicacion"></div>
-        </div>
-
         </div>
     </div>
 
@@ -97,8 +97,9 @@
       <!--Inicio Modal-->
       <div class="modal-contenedor">
         <div class="modal-carrito">
+             <h5 id="nombreusuario" class="font_oswald"></h5>
             <h3>Carrito</h3>
-            <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+            <button id="carritoCerrar">Cerrar</button>
             <div id="carrito-contenedor">
                  <!-- <div class="productoEnCarrito">
                     <p>Buzo 1</p>

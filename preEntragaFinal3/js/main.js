@@ -4,12 +4,12 @@ document.title = "Entrega - Proyecto Final ";
 /// input types of sweetalert2
 
 (async () => {
-
+    
     //const ipAPI = '//api.ipify.org?format=json'
     
-     const inputValue = fetch()
+     const inputValue = fetch('')
       .then(response => response.json())
-      .then(data => data) 
+      .then(data => data.entrada) 
     
     const { value: ipName } = await Swal.fire({
       title: 'Introduce tu nombre',
