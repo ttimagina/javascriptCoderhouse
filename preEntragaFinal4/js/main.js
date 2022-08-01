@@ -18,7 +18,16 @@ document.addEventListener('DOMContentLoaded', e => { fetchData()
     }
 
 });
-cards.addEventListener('click', e => { addCarrito(e) });
+cards.addEventListener('click', e => { 
+    Toastify({
+
+        text: "Se agrego Servicio",
+        
+        duration: 3000
+        
+        }).showToast();
+    addCarrito(e) 
+});
 items.addEventListener('click', e => { btnAumentarDisminuir(e) })
 
 // Traer productos
