@@ -9,8 +9,7 @@ const templateCarrito = document.getElementById('template-carrito').content
 const fragment = document.createDocumentFragment()
 let carrito = {}
 
-// Eventos
-// El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
+
 document.addEventListener('DOMContentLoaded', e => { fetchData()
     if (localStorage.getItem('carrito')) {
         carrito = JSON.parse(localStorage.getItem('carrito'))
@@ -34,7 +33,7 @@ items.addEventListener('click', e => { btnAumentarDisminuir(e) })
 const fetchData = async () => {
     const res = await fetch('./js/datos.json');
     const data = await res.json()
-    // console.log(data)
+   
     pintarCards(data)
 }
 
@@ -57,7 +56,7 @@ const addCarrito = e => {
     if (e.target.classList.contains('btn-dark')) {
         setCarrito(e.target.parentElement)
     }
-    //e.stopPropagation()
+    
 }
 
 const setCarrito = item => {
@@ -91,7 +90,7 @@ const pintarFooter = () => {
     // sumar cantidad y sumar totales
     const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
     const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
-    // console.log(nPrecio)
+    
 
     templateFooter.querySelectorAll('td')[0].textContent = nCantidad
     templateFooter.querySelector('span').textContent = nPrecio
@@ -110,7 +109,7 @@ const pintarFooter = () => {
 }
 
 const btnAumentarDisminuir = e => {
-    // console.log(e.target.classList.contains('btn-info'))
+    
     if (e.target.classList.contains('btn-info')) {
         const producto = carrito[e.target.dataset.id]
         producto.cantidad++
