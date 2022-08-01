@@ -1,47 +1,5 @@
-let carritoDeCompras = []
-
-
-
 document.title = "Entrega - Proyecto Final ";
 /// input types of sweetalert2
-
-(async () => {
-    
-    //const ipAPI = '//api.ipify.org?format=json'
-    
-     const inputValue = fetch('')
-      .then(response => response.json())
-      .then(data => data.entrada) 
-    
-    const { value: ipName } = await Swal.fire({
-      title: 'Introduce tu nombre',
-      input: 'text',
-      inputLabel: 'Gracias',
-      inputValue: inputValue,
-      showCancelButton: false,
-      inputValidator: (value) => {
-        if (!value) {
-          return 'Por favor dejanos un mensaje '
-        }
-      }
-    })
-    
-/*     if (ipName) {
-      Swal.fire(`Bienvenido ${ipName}`)
-      localStorage.setItem('nombres del usuario', ipName);
-
-      const saludos = document.getElementById('nombreusuario');
-      saludos.innerHTML = "Hola "+ ipName;
-      
-    } */
-    //// operardor AND
-    ipName && Swal.fire(`Bienvenido ${ipName}`),
-     localStorage.setItem('nombres del usuario', ipName); 
-     const saludos = document.getElementById('nombreusuario');
-     saludos.innerHTML = "Hola "+ ipName;
-    })()
-
-////
 
 const contenedorProductos = document.getElementById('contenedor-productos');
 const contenedorCarrito = document.getElementById('carrito-contenedor');
@@ -54,58 +12,70 @@ const precioTotal = document.getElementById('precioTotal');
 
 const selecTalles = document.getElementById('selecTalles')
 
-
+const traerDatos = async() => {
+    let respuesta = await fetch('./js/datos.json')
+    return respuesta.json()
+}
 
 //filtro
 selecTalles.addEventListener('change',()=>{
 
     console.log(selecTalles.value)
     if(selecTalles.value == 'all'){
-        mostrarProductos(stockProductos)
+        respuesta()
     }else{
-        let arrayNuevo = stockProductos.filter(item => item.tipo == selecTalles.value)//array nuevo
+        let arrayNuevo = productos.filter(item => item.tipo == selecTalles.value)//array nuevo
 
-        mostrarProductos(arrayNuevo)
+        respuesta(arrayNuevo)
     } 
 
 
 })
 
+window.addEventListener('DOMContentLoaded', () =>{
+    mostrarProductos()
+})
+
 //Buscado
-mostrarProductos(stockProductos)
+let carritoDeCompras = []
 
 //logica Ecommerce
-function mostrarProductos(array){
+const mostrarProductos = async () => {
+    let productos = await traerDatos()
+    let productosVisualizado = ''
+    productos.forEach(producto => {
 
-    contenedorProductos.innerHTML = ""
-
-    for(const el of array) {
-
-        let div = document.createElement('div')
-        div.className = 'col-md-3 d-flex flex-column my-3 mx-3'
-        div.innerHTML = `<div>
-        <img src="${el.img}" class="card-img-top img-fluid img_borde_redondo1" alt="imagen">
+        // destructuring
+        const {img, nombre, detalle, precio, id} = producto
+       { 
+        productosVisualizado +=
+ 
+        `<div class="col-md-3 d-flex flex-column my-3 mx-3">
+        <img src="${img}" class="card-img-top img-fluid img_borde_redondo1" alt="imagen">
         <div class="card-text mb-auto">    
-          <h4 class="titulos_notas--black">${el.nombre}</h4>
-          <p class="card-text txt_justificado">${el.detalle}</p>
+          <h4 class="titulos_notas--black">${nombre}</h4>
+          <p class="card-text txt_justificado">${detalle}</p>
         </div>
         <div class="bg-branding p-1 font_oswald">
-            <h6>Precio: $ ${el.precio}</h6>
-            <button type="button" id="boton${el.id}" class="btn btn-success">AGREGAR</button>
+            <h6>Precio: $ ${precio}</h6>
+            <button type="button" id="boton${id}" class="btn btn-success">AGREGAR</button>
         </div> 
         </div> `
-
-        contenedorProductos.appendChild(div)
         
-        let btnAgregar = document.getElementById(`boton${el.id}`)
+       }
+       
+    });
+    contenedorProductos.innerHTML = productosVisualizado
+    
+    let btnAgregar = document.getElementById(`boton${productos.id}`)
         
-        btnAgregar.addEventListener('click',()=>{
-            agregarAlCarrito(el.id);
-        })
+    btnAgregar.addEventListener('click',()=>{
+        agregarAlCarrito(productos.id);
+    }) 
 
-    }
        
 }
+
 function agregarAlCarrito(id) {
     let yaExiste = carritoDeCompras.find(elemento => elemento.id == id)
 
@@ -152,7 +122,7 @@ function mostrarCarrito(productoAgregar) {
 }
 
 
-
+s  
 
 function  actualizarCarrito (){
    contadorCarrito.innerText = carritoDeCompras.reduce((acc,el)=> acc + el.cantidad, 0)
